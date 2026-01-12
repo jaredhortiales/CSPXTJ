@@ -96,7 +96,7 @@
       subtitle: "Distrito Local 8",
       description:
         "Este apartado presenta un listado completo de las colonias junto con su información geográfica de localización, organizadas por secciones que representan los Distritos Locales y Federales correspondientes.",
-      url: "https://docs.google.com/spreadsheets/d/1zpdZmP1EDzoEasvcM1PqvXbk7br0jofn/edit?gid=377696390#gid=377696390",
+      url: "https://docs.google.com/spreadsheets/d/1zpdZmK1EDzoEasvcM1PqvXbk7br0jofn/edit?usp=sharing&ouid=109301563425405974624&rtpof=true&sd=true",
       embed: null
     },
     {
