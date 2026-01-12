@@ -280,3 +280,53 @@ code{ background:rgba(122,46,46,.08); padding:.15rem .35rem; border-radius:8px; 
 .embed {
   overflow: visible;
 }
+/* =========================================
+   VISOR GRANDE (MAPAS / ARCHIVOS EMBEBIDOS)
+   ========================================= */
+
+/* 1) Forzar que la columna del visor tenga prioridad de ancho */
+.hero__grid {
+  grid-template-columns: 1fr 1.7fr !important; /* izquierda / visor */
+  align-items: start;
+}
+
+/* 2) Hacer que la tarjeta del visor crezca en altura */
+.card__viewer {
+  height: calc(100vh - 220px);  /* ocupa casi toda la pantalla */
+  min-height: 720px;            /* nunca queda “chiquito” */
+  overflow: hidden;             /* evita scroll interno feo */
+  display: block;
+}
+
+/* 3) El iframe SIEMPRE ocupa todo el visor */
+.card__viewer iframe {
+  width: 100% !important;
+  height: 100% !important;      /* clave: 100% del contenedor */
+  border: 0;
+}
+
+/* 4) En móvil: que el visor siga grande */
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr !important;
+  }
+  .card__viewer {
+    height: 78vh;
+    min-height: 520px;
+  }
+}
+.viewer,
+.preview,
+.embed {
+  height: calc(100vh - 220px);
+  min-height: 720px;
+  overflow: hidden;
+}
+
+.viewer iframe,
+.preview iframe,
+.embed iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
