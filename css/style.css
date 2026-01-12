@@ -232,3 +232,35 @@ code{ background:rgba(122,46,46,.08); padding:.15rem .35rem; border-radius:8px; 
   .layout{ grid-template-columns:1fr; }
   .grid--2{ grid-template-columns:1fr; }
 }
+/* ================================
+   MAPA GRANDE – AJUSTE DASHBOARD
+   ================================ */
+
+/* Permitir más ancho general */
+.container {
+  max-width: 1400px;
+}
+
+/* Asegurar que la columna del visor crezca */
+.viewer,
+.preview,
+.card__viewer,
+.embed {
+  width: 100%;
+}
+
+/* Iframe del mapa mucho más grande */
+.viewer iframe,
+.preview iframe,
+.card__viewer iframe,
+.embed iframe {
+  width: 100%;
+  height: 80vh;        /* ocupa casi toda la pantalla */
+  min-height: 650px;   /* nunca pequeño */
+  border-radius: 14px;
+}
+
+/* Ajuste específico para sección mapa */
+#mapa iframe {
+  height: 85vh;
+}
