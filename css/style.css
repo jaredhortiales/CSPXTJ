@@ -264,3 +264,19 @@ code{ background:rgba(122,46,46,.08); padding:.15rem .35rem; border-radius:8px; 
 #mapa iframe {
   height: 85vh;
 }
+/* === Hacer la columna derecha más ancha y evitar tarjetas “angostas” === */
+.hero__grid,
+.grid,
+.layout,
+.split {
+  grid-template-columns: 1.15fr 1.85fr !important; /* más espacio al visor */
+}
+
+/* Asegura que las tarjetas no recorten el visor */
+.card,
+.panel,
+.viewer,
+.preview,
+.embed {
+  overflow: visible;
+}
