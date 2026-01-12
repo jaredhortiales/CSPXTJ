@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construyendo el Sentido de la Política | Portal Electoral</title>
+  <meta name="description" content="Portal informativo electoral: mapas, resultados, secciones y cartografía por distrito local." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <!-- Coloca logo.png en la raíz o en assets/img/logo.png según tu elección -->
+        <img class="brand__logo" src="logo.png" alt="Logotipo Construyendo el Sentido de la Política" />
+        <div class="brand__text">
+          <div class="brand__title">Construyendo el Sentido de la Política</div>
+          <div class="brand__subtitle">Portal de información electoral (Distrito Local 8 y 9)</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#mapa">Mapa</a>
+        <a href="#documentos">Documentos</a>
+        <a href="#fuentes">Fuentes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="mapa">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1>Información electoral organizada por distrito</h1>
+          <p>
+            Consulta cartografía, resultados y tablas de secciones/colonias para los Distritos Locales 8 y 9.
+            El sitio se enfoca en evidencia documental y enlaces directos, sin interpretación partidista.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary" id="btnDefaultMap" type="button">Abrir mapa inicial</button>
+            <a class="btn btn--ghost" href="#documentos">Ir a documentos</a>
+          </div>
+
+          <div class="mini-kpis">
+            <div class="kpi">
+              <div class="kpi__label">Cobertura</div>
+              <div class="kpi__value">Mexicali (DL 8 y DL 9)</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__label">Actualización</div>
+              <div class="kpi__value" id="lastUpdated">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__panel" role="region" aria-label="Visor principal">
+          <div class="viewer-head">
+            <div>
+              <div class="viewer-title" id="viewerTitle">Mapa de Captura de Promoción del Voto</div>
+              <div class="viewer-subtitle muted" id="viewerSubtitle">Vista inicial</div>
+            </div>
+            <div class="viewer-actions">
+              <a class="btn btn--primary" id="openExternalBtn" href="#" target="_blank" rel="noopener">Abrir</a>
+              <button class="btn btn--ghost" id="copyLinkBtn" type="button">Copiar enlace</button>
+            </div>
+          </div>
+
+          <div class="viewer" aria-label="Visor de contenido">
+            <iframe
+              id="mainFrame"
+              title="Visor"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="note">
+            Si algún documento no carga en el visor, revisa permisos en Drive/Sheets:
+            <strong>“Cualquiera con el enlace: lector”</strong> o publica la hoja si deseas acceso totalmente público.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="documentos" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Documentos por distrito</h2>
+          <p>Selecciona un elemento para visualizarlo. Puedes alternar entre Distrito 8 y Distrito 9.</p>
+        </div>
+
+        <div class="layout">
+          <aside class="sidebar" aria-label="Filtros y listado">
+            <div class="tabs" role="tablist" aria-label="Distritos">
+              <button class="tab is-active" id="tabAll" type="button" role="tab" aria-selected="true">Todos</button>
+              <button class="tab" id="tab8" type="button" role="tab" aria-selected="false">Distrito Local 8</button>
+              <button class="tab" id="tab9" type="button" role="tab" aria-selected="false">Distrito Local 9</button>
+            </div>
+
+            <div class="search">
+              <input id="searchInput" type="search" placeholder="Buscar documento…" aria-label="Buscar documento" />
+            </div>
+
+            <div id="docList" class="list" role="list"></div>
+          </aside>
+
+          <section class="content">
+            <div class="card">
+              <h3>Descripción</h3>
+              <p class="muted" id="docDescription">
+                Selecciona un documento del listado para ver su descripción aquí.
+              </p>
+            </div>
+
+            <div class="grid grid--2">
+              <div class="card">
+                <h3>Distrito Local 8</h3>
+                <p class="muted">
+                  Paquete informativo con resultados, secciones, colonias y cartografía relacionada con el contexto municipal.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>Distrito Local 9</h3>
+                <p class="muted">
+                  Paquete informativo con resultados, secciones, colonias y cartografía relacionada con el contexto municipal.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="fuentes" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Fuentes y criterios</h2>
+          <p>El portal prioriza evidencia documental y enlaces directos. La trazabilidad del origen es parte central del diseño.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Criterios de publicación</h3>
+            <ul class="bullets">
+              <li>Se muestran documentos y tablas con identificación clara (título, distrito y tipo).</li>
+              <li>Se evita alteración del contenido: se visualiza en su origen (Drive/Sheets/Maps).</li>
+              <li>La actualización se registra en el sitio (fecha visible).</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Nota técnica</h3>
+            <p class="muted">
+              Los embeds dependen de permisos. Para un portal público, lo recomendable es:
+              (a) Drive: “cualquiera con el enlace: lector”; (b) Sheets: publicar en la web si se requieren vistas abiertas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Construyendo el Sentido de la Política</div>
+      <div class="muted">GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
